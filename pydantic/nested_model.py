@@ -12,7 +12,7 @@ class User(BaseModel):
     email:str 
     phone: str = Field(
         ...,
-        le=10
+        pattern=r"^[6-9]\d{9}$"
         )
     address:Address | None = None
 
@@ -20,10 +20,10 @@ address = {"street":"56","city":"delhi","pincode":"06","country":"india"}
 user = {
     "name":"Himanshu",
     "email":"himanshu@gmail.com",
-    "phone":"8543985",
+    "phone":"8450000000",
     "address":address
 }
 
-user_object = User(user)
+user_object = User(**user)
 
 print(user_object)
