@@ -16,3 +16,5 @@ async def main():
         print(result)
 
 asyncio.run(main())
+
+# also this code is printing None after Hello Himanshu because the blocking code is not returning anything and we are printing it as print(result)
